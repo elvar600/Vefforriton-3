@@ -1,20 +1,8 @@
-#from bottle import route, run
-
 from sys import argv
 
+import bottle
 from bottle import *
-
-@route("/")
-def index():
-    return """
-    <h2>Verkefni 2</h1>
-    
-    """
-
-#run(host="localhost", port=8080, debug=True)
-
-bottle.run(host='0.0.0.0',port=argv[1])
-
+bottle.debug(True)
 
  
 @route("/")
@@ -37,5 +25,8 @@ def elvar():
 @route("/pic")
 def elvar():
     return "Hér er ljósmynd"
+
+
+bottle.run(host='0.0.0.0',port=argv[1])
 
 #run(host="localhost", port=8080, debug=True)
